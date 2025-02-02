@@ -1,6 +1,7 @@
 
 import Navbar from '@/components/Navbar'
 import PostContainer from '@/components/PostContainer'
+import SearchContainer from '@/components/SearchForm'
 import Sidebar from '@/components/Sidebar'
 import Link from 'next/link'
 import React from 'react'
@@ -38,12 +39,13 @@ const Home = () => {
 
 
       <div className='grid grid-cols-5'>
-        <div className='col-span-1 bg-gray '>
-          <p>hello</p>
+        <div className='col-span-2 m-3'>
+          <h1>Left</h1>
+          <SearchContainer />
         </div>
 
-        <div className='col-span-4'>
-          <p>hello</p>
+        <div className='col-span-3 m-3'>
+          <h1>Right </h1>
         </div>
       </div>
 
