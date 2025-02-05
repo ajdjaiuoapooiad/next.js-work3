@@ -24,9 +24,6 @@ const Home = async () => {
 
   return (
     <div>
-      
-      <Navbar /> 
-
 
       <div className='grid grid-cols-4'>
         <div className='col-span-1'>

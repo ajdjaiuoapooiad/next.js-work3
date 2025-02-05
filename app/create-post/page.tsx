@@ -41,7 +41,7 @@ const CreatePage =  () => {
 
 
   return (
-    <>
+    <div className='p-5'>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -86,10 +86,10 @@ const CreatePage =  () => {
               </FormItem>
             )}
           />
-          <Button type="submit">投稿</Button>
+          <Button type="submit" >投稿</Button>
         </form>
       </Form>
-    </>
+    </div>
   )
 }
 
