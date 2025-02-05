@@ -30,7 +30,7 @@ const Home = async () => {
 
       <div className='grid grid-cols-4'>
         <div className='col-span-1'>
-          <h1 className='bg-blue-500'>Left</h1>
+          <h1 className='bg-green-500'>Left</h1>
           <SearchContainer />
         </div>
 

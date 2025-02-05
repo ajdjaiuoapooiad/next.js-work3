@@ -29,7 +29,7 @@ const CreatePage =  () => {
     defaultValues: {
       title: '',
       category: '',
-      income: 0,
+      income: undefined,
     }
   })
 

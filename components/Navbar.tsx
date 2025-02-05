@@ -2,10 +2,10 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div className='bg-blue-500 p-4'>
-      <nav className='flex justify-between mx-auto container items-center'>
+    <div className='bg-blue-500 '>
+      <nav className='flex justify-between mx-auto container items-center p-3'>
        
-            <div className='text-3xl font-bold'>
+            <div className='text-3xl '>
               <a href="" className='hover:text-blue-100 transition-all duration-300'>求人検索アプリ</a>
             </div>
 
