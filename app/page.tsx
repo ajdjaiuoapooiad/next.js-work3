@@ -1,10 +1,8 @@
 
 import JobsList from '@/components/JobsList'
-import Navbar from '@/components/Navbar'
-import SearchContainer from '@/components/SearchForm'
-
 import React from 'react'
 import { Post } from './types/type'
+import SearchForm from '@/components/SearchForm'
 
 
 
@@ -29,7 +27,7 @@ const Home = async () => {
         <div className='col-span-1'>
           <h1 className='bg-green-500'>Left</h1>
           <div className='text-2xl'>検索カテゴリ</div>
-          <SearchContainer />
+          <SearchForm />
         </div>
 
         <div className='col-span-3 '>
