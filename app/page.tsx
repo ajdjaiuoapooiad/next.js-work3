@@ -28,12 +28,18 @@ const Home = async () => {
       <div className='grid grid-cols-4'>
         <div className='col-span-1'>
           <h1 className='bg-green-500'>Left</h1>
+          <div className='text-2xl'>検索カテゴリ</div>
           <SearchContainer />
         </div>
 
         <div className='col-span-3 '>
           <h1 className='bg-red-500'>Right </h1>
-          <JobsList posts={posts} />
+          <div className='text-3xl'>検索結果: 10件</div>
+          
+          <div className='mx-12'>
+            <JobsList posts={posts} />
+          </div>
+            
         </div>
       </div>
 
