@@ -9,7 +9,7 @@ import { Post } from './types/type'
 
 
 
-async function getData() {
+export async function getData() {
   const res = await fetch('http://localhost:3000/api/v1', {
     cache: 'no-store',
   })
