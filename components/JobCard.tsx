@@ -1,8 +1,23 @@
+import { Post } from '@/app/types/type'
 import React from 'react'
 
-const JobCard = () => {
+
+
+
+interface CardProps {
+  post: Post 
+}
+
+
+const JobCard = ({post}: CardProps) => {
+  const {id, title, category, income} = post
+
   return (
-    <div>JobCard</div>
+    <div key={id} className='border p-5 my-5'>
+      <h2>{title}</h2>
+      <p>Category: {category}</p>
+      <p>Income: ${income}</p>
+    </div>
   )
 }
 

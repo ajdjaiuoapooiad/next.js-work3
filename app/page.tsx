@@ -13,7 +13,7 @@ async function getData() {
   const res = await fetch('http://localhost:3000/api/v1', {
     cache: 'no-store',
   })
-  const data: Post = await res.json()
+  const data: Post[] = await res.json()
   console.log(data);
   return data;
 }
