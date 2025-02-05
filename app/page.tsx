@@ -1,15 +1,25 @@
 
 import JobsList from '@/components/JobsList'
 import Navbar from '@/components/Navbar'
-import PostContainer from '@/components/PostContainer'
 import SearchContainer from '@/components/SearchForm'
-import Sidebar from '@/components/Sidebar'
 
-import { QueryClient } from '@tanstack/react-query'
-import Link from 'next/link'
 import React from 'react'
+import { Post } from './types/type'
 
-const Home = async () => {
+
+
+
+async function getData() {
+  const res = await fetch('http://localhost:3000/api/v1', {
+    cache: 'no-store',
+  })
+  const data: Post = await res.json()
+  console.log(data);
+  return data;
+}
+
+const Home = async () => {  
+  const posts = await getData();
 
 
   return (
@@ -24,9 +34,9 @@ const Home = async () => {
           <SearchContainer />
         </div>
 
-        <div className='col-span-3'>
+        <div className='col-span-3 '>
           <h1 className='bg-red-500'>Right </h1>
-          <JobsList />
+          <JobsList posts={posts} />
         </div>
       </div>
 

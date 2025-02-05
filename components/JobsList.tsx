@@ -1,15 +1,25 @@
-import prisma from '@/utils/db'
+import { Post } from '@/app/types/type'
 import React from 'react'
 
-const JobsList = () => {
+interface CardListProps {
+  posts: Post[] 
+}
 
-  const jobs = prisma.job.findMany()
+const JobsList = ({posts}: {posts: CardListProps}) => {
+
+
+
   return (
     <div>
-      
-      <div>
-        {}
-      </div>
+      {posts.map((post: Post) => {
+        return (
+          <div key={post.id}>
+            <h2>{post.title}</h2>
+            <p>Category: {post.category}</p>
+            <p>Income: ${post.income}</p>
+          </div>
+        )
+      })}
     </div>
   )
 }

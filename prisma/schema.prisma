@@ -12,14 +12,10 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-
-
-
-model Job {
-  id        String      @id @default(uuid())
+model Post {
+  id        Int     @id @default(autoincrement())
+  title     String
+  category String
+  income Int 
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title    String
-  category   String
-  income  Int
 }
