@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/select"
 import { Button } from './ui/button'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { JobStatus } from '@/utils/types'
 
 
 
@@ -47,14 +48,19 @@ const SearchForm = () => {
       <form action="" onSubmit={handleSubmit}>
         <Input type="text" placeholder="Search..."  name='search' defaultValue={search} />
 
-        <Select name='jobStatus'>
+        <Select name='jobStatus' defaultValue={jobStatus} >
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Theme" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="light">Light</SelectItem>
-            <SelectItem value="dark">Dark</SelectItem>
-            <SelectItem value="system">System</SelectItem>
+
+            {['all', ...Object.values(JobStatus)].map((jobStatus) => {
+              return (
+
+                <SelectItem value={jobStatus} key={jobStatus} >{jobStatus}</SelectItem>
+              )
+            })}
+            
           </SelectContent>
         </Select>
 
