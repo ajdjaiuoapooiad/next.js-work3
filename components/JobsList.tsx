@@ -29,8 +29,8 @@ const JobsList = () => {
   return (
 
     <>
-      <h1 className='bg-red-500'>Right </h1>
-      <div className='mx-10'>
+
+      <div className='mx-10 my-10'>
         <div className='text-2xl font-bold'>求人一覧</div>
         <div className='text-1xl '>該当件数: {jobs.length}件</div>
       </div>

@@ -47,9 +47,9 @@ const SearchForm = () => {
 
 
   return (
-    <div className='mx-10 '>
+    <div className='mx-10 my-10'>
 
-      <h1 className='bg-green-500'>Left</h1>
+
       <div className='text-2xl font-bold'>求人カテゴリ</div>
 
 
