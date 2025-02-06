@@ -44,15 +44,20 @@ const SearchForm = () => {
 
 
   return (
-    <div>
-      <form action="" onSubmit={handleSubmit}>
-        <Input type="text" placeholder="Search..."  name='search' defaultValue={search} />
+    <div className='mx-10 '>
 
-        <Select name='jobStatus' defaultValue={jobStatus} >
-          <SelectTrigger className="w-[180px]">
+      <h1 className='bg-green-500'>Left</h1>
+      <div className='text-2xl font-bold'>検索カテゴリ</div>
+
+
+      <form action="" onSubmit={handleSubmit} className='py-3'>
+        <Input className='my-5 bg-gray-100' type="text" placeholder="Search..."  name='search' defaultValue={search} />
+
+        <Select   name='jobStatus' defaultValue={jobStatus} >
+          <SelectTrigger className="w-[180px] my-5 bg-gray-100">
             <SelectValue placeholder="Theme" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent >
 
             {['all', ...Object.values(JobStatus)].map((jobStatus) => {
               return (

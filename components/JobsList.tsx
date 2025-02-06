@@ -26,13 +26,27 @@ const JobsList = () => {
 
 
   return (
-    <div className='container '>
-      {jobs.map((job) => {
-        return (
-          <JobCard key={job.id} job={job} />
-        )
-      })}
-    </div>
+
+    <>
+      <h1 className='bg-red-500'>Right </h1>
+      <div className='mx-10'>
+        <div className='text-2xl font-bold'>求人一覧</div>
+        <div className='text-1xl '>該当件数: {jobs.length}件</div>
+      </div>
+      
+      <div className='mx-12'>
+        
+        <div className=''>
+          {jobs.map((job) => {
+            return (
+              <JobCard key={job.id} job={job} />
+            )
+          })}
+        </div>
+
+
+      </div>
+    </>
   )
 }
 

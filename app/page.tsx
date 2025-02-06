@@ -30,21 +30,15 @@ const Home = async () => {
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
 
-      <div className='grid grid-cols-4'>
-        <div className='col-span-1'>
-          <h1 className='bg-green-500'>Left</h1>
-          <div className='text-2xl'>検索カテゴリ</div>
-          <SearchForm />
+      <div className='grid grid-cols-4 '>
+        <div className='h-500 bg-gray-300 bg-cover '>
+          <div className='col-span-1'>
+           <SearchForm />
+          </div>
         </div>
 
         <div className='col-span-3 '>
-          <h1 className='bg-red-500'>Right </h1>
-          <div className='text-3xl'>検索結果: 10件</div>
-          
-          <div className='mx-12'>
-            <JobsList />
-          </div>
-            
+            <JobsList />  
         </div>
       </div>
 
