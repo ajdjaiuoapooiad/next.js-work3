@@ -12,13 +12,13 @@ import { z } from 'zod'
 
 export const formSchema = z.object({
   title: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+    message: "Title must be at least 2 characters.",
   }),
   category: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+    message: "Category must be at least 2 characters.",
   }),
-  income: z.coerce.number().min(2, {
-    message: "Username must be at least 2 characters.",
+  income: z.string().min(2, {
+    message: "Income must be at least 2 characters.",
   }),
 })
 
@@ -29,7 +29,7 @@ const CreatePage =  () => {
     defaultValues: {
       title: '',
       category: '',
-      income: undefined,
+      income: '',
     }
   })
 

@@ -4,6 +4,6 @@ export interface Post {
     id: number
     title: string
     category: string
-    income: number 
+    income: string 
     createdAt: Date
 }
