@@ -15,9 +15,9 @@ const JobCard = ({job}: {job: JobType}) => {
 
   return (
     <div key={id} className='border p-5 my-5'>
-      <h2>{title}</h2>
-      <p>Category: {category}</p>
-      <p>Income: ${income}</p>
+      <div className='text-2xl font-bold' >{title}</div>
+      <p className='py-3'>カテゴリ: {category}</p>
+      <p>年収: {income}万円</p>
     </div>
   )
 }

@@ -41,8 +41,10 @@ const CreatePage =  () => {
 
 
   return (
-    <div className='p-5'>
-      <Form {...form}>
+    <div className='container px-12 py-12'>
+
+      <div className='text-4xl font-bold py-5'>Createページ</div>
+      <Form {...form}  >
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
             control={form.control}
