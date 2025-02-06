@@ -47,18 +47,36 @@ const SearchForm = () => {
     <div className='mx-10 '>
 
       <h1 className='bg-green-500'>Left</h1>
-      <div className='text-2xl font-bold'>検索カテゴリ</div>
+      <div className='text-2xl font-bold'>求人カテゴリ</div>
 
 
       <form action="" onSubmit={handleSubmit} className='py-3'>
         <Input className='my-5 bg-gray-100' type="text" placeholder="Search..."  name='search' defaultValue={search} />
 
+        <div className='text-1xl'>カテゴリ</div>
         <Select   name='jobStatus' defaultValue={jobStatus} >
           <SelectTrigger className="w-[180px] my-5 bg-gray-100">
             <SelectValue placeholder="Theme" />
           </SelectTrigger>
           <SelectContent >
+            
+            {['all', ...Object.values(JobStatus)].map((jobStatus) => {
+              return (
 
+                <SelectItem value={jobStatus} key={jobStatus} >{jobStatus}</SelectItem>
+              )
+            })}
+            
+          </SelectContent>
+        </Select>
+
+        <div className='text-1xl'>年収</div>
+        <Select   name='jobStatus' defaultValue={jobStatus} >
+          <SelectTrigger className="w-[180px] my-5 bg-gray-100">
+            <SelectValue placeholder="Theme" />
+          </SelectTrigger>
+          <SelectContent >
+            
             {['all', ...Object.values(JobStatus)].map((jobStatus) => {
               return (
 
