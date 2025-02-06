@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/select"
 import { Button } from './ui/button'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { JobStatus } from '@/utils/types'
+import { JobIncome, JobStatus } from '@/utils/types'
 
 
 
@@ -19,6 +19,7 @@ const SearchForm = () => {
   const searchParams = useSearchParams()
   const search = searchParams.get('search') || '';
   const jobStatus = searchParams.get('jobStatus') || 'all';
+  const jobIncome = searchParams.get('jobIncome') || 'all';
 
   const router = useRouter()
   const pathNama = usePathname();
@@ -30,8 +31,10 @@ const SearchForm = () => {
     const formData = new FormData(e.currentTarget)
     const search = formData.get('search') as string
     const jobStatus = formData.get('jobStatus') as string
+    const jobIncome = formData.get('jobIncome') as string
     params.set('search', search)
     params.set('jobStatus', jobStatus)
+    params.set('jobIncome', jobIncome)
 
     router.push(`${pathNama}?${params.toString()}`)
   }
@@ -71,16 +74,16 @@ const SearchForm = () => {
         </Select>
 
         <div className='text-1xl'>年収</div>
-        <Select   name='jobStatus' defaultValue={jobStatus} >
+        <Select   name='jobIncome' defaultValue={jobIncome} >
           <SelectTrigger className="w-[180px] my-5 bg-gray-100">
             <SelectValue placeholder="Theme" />
           </SelectTrigger>
           <SelectContent >
             
-            {['all', ...Object.values(JobStatus)].map((jobStatus) => {
+            {['all', ...Object.values(JobIncome)].map((jobIncome) => {
               return (
 
-                <SelectItem value={jobStatus} key={jobStatus} >{jobStatus}</SelectItem>
+                <SelectItem value={jobIncome} key={jobIncome} >{jobIncome}</SelectItem>
               )
             })}
             

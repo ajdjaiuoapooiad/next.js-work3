@@ -17,6 +17,12 @@ export enum JobStatus {
   Declined = 'declined',
 }
 
+export enum JobIncome {
+  Pending = '200',
+  Interview = '300',
+  Declined = '400',
+}
+
 export enum JobMode {
   FullTime = 'full-time',
   PartTime = 'part-time',

@@ -22,7 +22,7 @@ const Home = async () => {
   // const posts = await getData();
   const queryClient = new QueryClient()
   await queryClient.prefetchQuery({
-    queryKey: ['', '','all'],
+    queryKey: ['', '','all','all'],
     queryFn: () => getAllJobsAction({}),
   })
 
@@ -31,7 +31,7 @@ const Home = async () => {
     <HydrationBoundary state={dehydrate(queryClient)}>
 
       <div className='grid grid-cols-4 '>
-        <div className='h-500 bg-gray-300 bg-cover '>
+        <div className='h-800 bg-gray-300 bg-cover '>
           <div className='col-span-1'>
            <SearchForm />
           </div>

@@ -14,10 +14,11 @@ const JobsList = () => {
   const searchParams = useSearchParams()
   const search = searchParams.get('search') || '';
   const jobStatus = searchParams.get('jobStatus') || 'all';
+  const jobIncome = searchParams.get('jobIncome') || 'all';
 
   const {data, isPending} = useQuery({
-    queryKey: ['' ,search ?? '', jobStatus ],
-    queryFn: () => getAllJobsAction({search, jobStatus}),
+    queryKey: ['' ,search ?? '', jobStatus, jobIncome ],
+    queryFn: () => getAllJobsAction({search, jobStatus, jobIncome}),
   })
   const jobs = data?.jobs || [];
 

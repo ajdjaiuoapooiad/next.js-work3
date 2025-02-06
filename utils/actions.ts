@@ -26,11 +26,13 @@ export const post = async ({title, category, income}: z.infer<typeof formSchema>
 type GetAllJobsActionType = {
     search?: string;
     jobStatus?: string;
+    jobIncome?: string;
 }
 
 export async function getAllJobsAction({
     search,
     jobStatus,
+    jobIncome,
 }: GetAllJobsActionType): Promise<{
     jobs: JobType[];
     count: number;
@@ -62,6 +64,12 @@ export async function getAllJobsAction({
                 category: jobStatus,
             }
         }
+        if(jobIncome && jobIncome !== 'all'){
+          whereClause = {
+              ...whereClause,
+              income: jobIncome,
+          }
+      }
 
         const jobs: JobType[] = await prisma.post.findMany({
             where: whereClause,
