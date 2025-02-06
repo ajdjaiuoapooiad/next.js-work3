@@ -3,19 +3,18 @@ import * as z from 'zod';
 
 
 export type JobType = {
-  id: string;
-  createdAt: Date;
-  updatedAt: Date;
+  id: number;
   title: string;
   category: string;
   income: number;
+  createdAt: Date;
  
 };
 
 export enum JobStatus {
-  Pending = 'Next.js',
-  Interview = 'Ts',
-  Declined = 'React',
+  Pending = 'pending',
+  Interview = 'interview',
+  Declined = 'declined',
 }
 
 export enum JobMode {
